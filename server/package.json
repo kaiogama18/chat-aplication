@@ -1,7 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "description": "Aplication Chart for server",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "ecgo \"Error: no test specified\" && exit 1"
+  },
   "license": "MIT",
   "devDependencies": {
     "cors": "^2.8.5",
