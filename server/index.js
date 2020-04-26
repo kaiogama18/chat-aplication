@@ -12,9 +12,9 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 io.on('connection', (socket) => {
-    // console.log("We have a new connectiom!!!");
+
+
     socket.on('join', ({ name, room }, callback) => {
-        // console.log(name, room);
         const { error, user } = addUser({ id: socket.id, name, room });
 
         if (error) return callback(error);
@@ -22,7 +22,9 @@ io.on('connection', (socket) => {
         socket.join(user.room);
 
         socket.emit('message', { user: 'admin', text: `${user.name}, Bem vindo a sala ${user, room}` });
+
         socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name}, entrou!` });
+
 
         socket.join(user.room)
 

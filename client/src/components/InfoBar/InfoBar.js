@@ -1,0 +1,2 @@
+
+import './InfoBar.css';
